@@ -14,7 +14,7 @@ export default function CtaBand({ title = 'Ready to talk through your case?', te
             <h2 className="text-balance text-[34px] font-medium capitalize leading-[1.15] tracking-[-0.045em] sm:text-[48px]">{title}</h2>
             <p className="text-[17px] leading-[1.5] text-white/80 sm:text-[18px]">{text}</p>
           </div>
-          <div className="flex flex-col gap-3 xs:flex-row">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <ButtonLink to="/contact#contact" variant="white">
               Schedule a consult
             </ButtonLink>

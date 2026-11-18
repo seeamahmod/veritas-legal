@@ -45,7 +45,7 @@ const ease = [0.22, 1, 0.36, 1]
 function Hero() {
   const words = 'Navigating the Legal Landscape with Expertise'.split(' ')
   return (
-    <HeroFrame image={hero} imagePosition="60% 20%" minHeight="min-h-[680px] sm:min-h-[760px] lg:min-h-[863px]">
+    <HeroFrame image={hero} imagePosition="60% 18%" minHeight="min-h-[680px] sm:min-h-[760px] lg:min-h-[863px]">
       <div className="mt-auto flex max-w-[694px] flex-col gap-12 pt-28 sm:gap-14 lg:mt-[110px] lg:pt-0">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-6">
@@ -75,7 +75,7 @@ function Hero() {
             </motion.p>
           </div>
           <motion.div
-            className="flex flex-col gap-3 xs:flex-row xs:items-center"
+            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.75 }}

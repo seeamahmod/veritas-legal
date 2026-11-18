@@ -62,24 +62,24 @@ export default function Footer() {
               <ul className="flex flex-col gap-5 text-[16px] leading-none tracking-[-0.015em] text-ink-soft">
                 <li>
                   <Link to="/contact" className="flex items-center gap-[10px] hover:text-brand">
-                    <span className="flex size-6 items-center justify-center rounded-full bg-brand text-white">
-                      <MapPinIcon className="size-[11px]" strokeWidth={2.4} />
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                      <MapPinIcon className="size-[15px]" strokeWidth={2} />
                     </span>
                     Los Angeles Office
                   </Link>
                 </li>
                 <li>
                   <a href={`tel:${contact.footerPhoneHref}`} className="flex items-center gap-[10px] hover:text-brand">
-                    <span className="flex size-6 items-center justify-center rounded-full bg-brand text-white">
-                      <PhoneIcon className="size-[11px]" strokeWidth={2.4} />
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                      <PhoneIcon className="size-[15px]" strokeWidth={2} />
                     </span>
                     {contact.footerPhone}
                   </a>
                 </li>
                 <li>
                   <a href={`mailto:${contact.email}`} className="flex items-center gap-[10px] break-all hover:text-brand">
-                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
-                      <EnvelopeIcon className="size-[11px]" strokeWidth={2.4} />
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                      <EnvelopeIcon className="size-[15px]" strokeWidth={2} />
                     </span>
                     {contact.email}
                   </a>

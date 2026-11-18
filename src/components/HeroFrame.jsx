@@ -40,6 +40,8 @@ export default function HeroFrame({ image, imageAlt = '', imagePosition = 'cente
           {image && <div className="absolute inset-0 bg-[linear-gradient(255.8deg,rgba(0,0,0,0)_30%,rgba(0,0,0,0.55)_80%)] max-sm:bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.35)_45%,rgba(0,0,0,0.8)_100%)]" />}
         </div>
 
+        {/* Content column: matches the 1320px section grid on large/extra-large screens (Figma 1920 + 2576 frames). */}
+        <div className="mx-auto flex w-full max-w-[1342px] flex-1 flex-col">
         <div className="flex items-center justify-between">
           <Link to="/" aria-label="Veritas Legal home" className="transition-opacity hover:opacity-80">
             <img src={logoWhite} alt="Veritas Legal" width="120" height="36" className="h-9 w-[120px]" />
@@ -57,6 +59,7 @@ export default function HeroFrame({ image, imageAlt = '', imagePosition = 'cente
         </div>
 
         {children}
+        </div>
       </div>
       <Menu open={open} onClose={close} />
     </header>
