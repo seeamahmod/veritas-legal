@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HeroFrame from '../components/HeroFrame'
 import PricingSection from '../components/PricingSection'
 import ContactSection from '../components/ContactSection'
+import FaqAccordion from '../components/FaqAccordion'
 import { ButtonLink, CountUp, FadeImage, IconBadge, Reveal, RevealItem, SectionHeading, SectionTag, Stagger } from '../components/ui'
 import {
   ArrowUpRightIcon,
@@ -495,6 +496,49 @@ function Testimonials() {
   )
 }
 
+const homeFaqs = [
+  {
+    q: 'Is the first consultation really free?',
+    a: 'Yes. Your first 30-minute consultation is free and confidential, in person or by secure video. We will explain your options and give you a clear estimate before any work begins.',
+  },
+  {
+    q: 'What areas of law do you practice?',
+    a: 'Our core practice groups cover corporate law and governance, immigration, dispute resolution and litigation, estate planning, intellectual property, and employment law.',
+  },
+  {
+    q: 'How do your monthly plans work?',
+    a: 'Our Individual and Business plans give you ongoing access to an attorney for a fixed monthly fee, so you can ask questions early instead of waiting for a problem to grow. Enterprise plans are tailored to your organization.',
+  },
+  {
+    q: 'How quickly will I hear back after contacting you?',
+    a: 'Our intake team responds within one business day. Urgent matters, such as court deadlines or detention, are escalated to an attorney the same day.',
+  },
+  {
+    q: 'Is my information kept confidential?',
+    a: 'Always. Everything you share is protected by attorney-client privilege once we are engaged, and documents are exchanged through our encrypted client portal, never plain email.',
+  },
+  {
+    q: 'Can you help clients outside Los Angeles?',
+    a: 'Yes. We serve clients across the United States and in more than 30 countries. Immigration law is federal, and for local matters elsewhere we work with trusted co-counsel.',
+  },
+]
+
+function Faq() {
+  return (
+    <section id="faq" className="section-y bg-surface" aria-labelledby="faq-title">
+      <div className="container-x flex flex-col gap-12">
+        <SectionHeading
+          tag="FAQ"
+          title={<span id="faq-title">Frequently asked questions</span>}
+          text="Straight answers to the questions clients ask us most. Still unsure? Our team is a call away."
+          className="max-w-[600px]"
+        />
+        <FaqAccordion items={homeFaqs} card="bg-white" badge="bg-surface" size="lg" className="mx-auto w-full max-w-[960px]" />
+      </div>
+    </section>
+  )
+}
+
 export default function Home() {
   return (
     <>
@@ -514,6 +558,7 @@ export default function Home() {
         <Testimonials />
         <PricingSection />
         <ContactSection />
+        <Faq />
       </main>
     </>
   )

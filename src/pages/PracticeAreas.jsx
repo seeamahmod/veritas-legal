@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import PageHero from '../components/PageHero'
 import CtaBand from '../components/CtaBand'
+import FaqAccordion from '../components/FaqAccordion'
 import { ButtonLink, FadeImage, IconBadge, Reveal, SectionHeading } from '../components/ui'
-import { CircleCheckIcon, FileCheckIcon, FileContentIcon, GavelIcon, GlobeIcon, LockIcon, PlusIcon, UsersIcon } from '../components/icons'
+import { CircleCheckIcon, FileCheckIcon, FileContentIcon, GavelIcon, GlobeIcon, LockIcon, UsersIcon } from '../components/icons'
 import { practiceAreas } from '../data/content'
 import hero from '../assets/pages/practice-hero.webp'
 
@@ -17,51 +16,11 @@ const faqs = [
 ]
 
 function Faq() {
-  const [open, setOpen] = useState(0)
   return (
     <section className="section-y bg-white">
       <div className="container-x flex flex-col gap-12 lg:flex-row lg:gap-20">
         <SectionHeading align="left" tag="FAQ" title="Questions we hear every week" text="Can’t find what you need? Our intake team replies within one business day." className="lg:w-[38%]" />
-        <div className="flex flex-1 flex-col gap-4">
-          {faqs.map((f, i) => {
-            const isOpen = open === i
-            return (
-              <Reveal key={f.q} delay={i * 0.05} className="rounded-[20px] bg-surface">
-                <h3>
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-${i}`}
-                    id={`faq-btn-${i}`}
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-6 p-5 text-left text-[18px] font-medium tracking-[-0.015em] sm:p-6 sm:text-[20px]"
-                  >
-                    {f.q}
-                    <span className={`flex size-9 shrink-0 items-center justify-center rounded-full transition-[transform,background-color,color] duration-300 ${isOpen ? 'rotate-45 bg-brand text-white' : 'bg-white text-brand'}`}>
-                      <PlusIcon className="size-4" />
-                    </span>
-                  </button>
-                </h3>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      id={`faq-${i}`}
-                      role="region"
-                      aria-labelledby={`faq-btn-${i}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-6 text-[17px] leading-[1.6] text-ink-soft sm:px-6">{f.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </Reveal>
-            )
-          })}
-        </div>
+        <FaqAccordion items={faqs} className="flex-1" />
       </div>
     </section>
   )
