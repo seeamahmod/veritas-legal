@@ -29,8 +29,15 @@ const config = {
 
 const next = JSON.stringify(config, null, 2) + '\n'
 if (process.argv.includes('--check')) {
-  const current = await readFile('vercel.json', 'utf8').catch(() => '')
-  if (current !== next) {
+  const current = await readFile('vercel.json', 'utf8').catch(() => '{}')
+  // Compare structure, not bytes, so line endings or formatting never break the build.
+  let same = false
+  try {
+    same = JSON.stringify(JSON.parse(current)) === JSON.stringify(config)
+  } catch {
+    same = false
+  }
+  if (!same) {
     console.error('vercel.json is out of sync with security-headers.js. Run: npm run sync:headers')
     process.exit(1)
   }
