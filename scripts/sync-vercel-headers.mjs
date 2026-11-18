@@ -8,7 +8,6 @@ const toList = (obj) => Object.entries(obj).map(([key, value]) => ({ key, value 
 const config = {
   $schema: 'https://openapi.vercel.sh/vercel.json',
   framework: 'vite',
-  cleanUrls: true,
   trailingSlash: false,
   // Vercel serves real files and /api functions first; everything else falls through to the SPA.
   rewrites: [{ source: '/(.*)', destination: '/index.html' }],
