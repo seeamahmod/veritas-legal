@@ -9,8 +9,9 @@ const config = {
   $schema: 'https://openapi.vercel.sh/vercel.json',
   framework: 'vite',
   trailingSlash: false,
-  // Vercel serves real files and /api functions first; everything else falls through to the SPA.
-  rewrites: [{ source: '/(.*)', destination: '/index.html' }],
+  // Vercel serves real files and /api functions first; other paths fall through to the SPA.
+  // Missing /assets/* and /api/* stay real 404s so stale chunks never get HTML cached as JS.
+  rewrites: [{ source: '/((?!assets/|api/).*)', destination: '/index.html' }],
   headers: [
     { source: '/(.*)', headers: toList(securityHeaders) },
     {
