@@ -1,0 +1,39 @@
+{
+  "name": "veritas-legal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check:headers && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "sync:headers": "node scripts/sync-vercel-headers.mjs",
+    "check:headers": "node scripts/sync-vercel-headers.mjs --check",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "audit:prod": "npm audit --omit=dev"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "framer-motion": "^14.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.6"
+  },
+  "description": "Veritas Legal — a secure, animated, responsive law-firm website built with React, Vite and Tailwind CSS.",
+  "license": "MIT",
+  "author": "Seeam Ahmod",
+  "engines": {
+    "node": ">=20"
+  }
+}
