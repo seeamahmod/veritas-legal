@@ -53,7 +53,7 @@ export default function Careers() {
             <SectionHeading tag="Benefits" title="We invest in our people" className="max-w-[560px]" />
             <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {perks.map(({ Icon, title, text }) => (
-                <RevealItem key={title} className="group flex flex-col gap-5 rounded-[24px] bg-surface p-6 transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(42,42,42,0.25)]">
+                <RevealItem key={title} className="group flex flex-col gap-5 rounded-[24px] bg-surface p-6 card-hover">
                   <IconBadge icon={Icon} />
                   <h3 className="text-[22px] font-medium leading-[1.2] tracking-[-0.015em]">{title}</h3>
                   <p className="text-[17px] leading-[1.5] text-ink-soft">{text}</p>
@@ -71,7 +71,7 @@ export default function Careers() {
                 <RevealItem as="li" key={j.title}>
                   <a
                     href={`mailto:${contact.email}?subject=${encodeURIComponent(`Application: ${j.title}`)}`}
-                    className="group flex flex-col gap-4 rounded-[20px] bg-white p-5 transition-[background-color,color,transform] duration-500 hover:bg-brand hover:text-white sm:p-6 md:flex-row md:items-center md:justify-between"
+                    className="group flex flex-col gap-4 rounded-[20px] bg-white p-5 card-hover sm:p-6 md:flex-row md:items-center md:justify-between"
                   >
                     <div className="flex flex-col gap-2">
                       <h3 className="text-[20px] font-medium leading-[1.25] tracking-[-0.02em] sm:text-[22px]">{j.title}</h3>
@@ -84,7 +84,7 @@ export default function Careers() {
                       <span className="flex items-center gap-1.5 rounded-full bg-surface px-3 py-1.5 text-ink">
                         <SuitcaseIcon className="size-4 text-brand" /> {j.type}
                       </span>
-                      <span className="flex size-10 items-center justify-center rounded-full bg-brand text-white transition-colors duration-500 group-hover:bg-white group-hover:text-brand">
+                      <span className="flex size-10 items-center justify-center rounded-full bg-brand text-white transition-[background-color,transform] duration-500 [@media(hover:hover)]:group-hover:scale-110 [@media(hover:hover)]:group-hover:bg-brand-dark">
                         <ArrowUpRightIcon className="size-[18px]" />
                         <span className="sr-only">Apply for {j.title} by email</span>
                       </span>

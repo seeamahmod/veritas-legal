@@ -49,8 +49,8 @@ export default function PricingSection({ bg = 'bg-surface' }) {
                 key={p.id}
                 onMouseEnter={() => canHover && setHovered(p.id)}
                 onFocus={() => canHover && setHovered(p.id)}
-                className={`flex flex-col gap-6 rounded-[20px] bg-white p-4 transition-[padding,box-shadow,transform] duration-500 ease-out sm:p-5 ${
-                  active ? 'lg:py-[34px] shadow-[0_30px_60px_-30px_rgba(42,42,42,0.25)]' : ''
+                className={`flex flex-col gap-6 rounded-[20px] bg-white p-4 transition-[padding] duration-500 ease-out sm:p-5 ${
+                  active ? 'lg:py-[34px]' : ''
                 } ${p.featured ? 'md:col-span-2 lg:col-span-1 md:max-lg:mx-auto md:max-lg:w-[calc(50%-12px)]' : ''}`}
               >
                 <div

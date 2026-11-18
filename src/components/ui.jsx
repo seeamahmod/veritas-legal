@@ -114,9 +114,12 @@ export function Button({ variant = 'primary', icon = true, className = '', child
 /** White circular icon badge used on feature cards. */
 export function IconBadge({ icon: Icon, size = 'lg', tone = 'white' }) {
   const sizes = { lg: 'size-[64px] sm:size-[72px] [&_svg]:size-[28px] sm:[&_svg]:size-[30px]', md: 'size-[56px] [&_svg]:size-[27px]', sm: 'size-8 [&_svg]:size-4' }
-  const tones = { white: 'bg-white text-brand', brand: 'bg-brand text-white' }
+  const tones = {
+    white: 'bg-white text-brand [@media(hover:hover)]:group-hover:bg-brand [@media(hover:hover)]:group-hover:text-white group-has-[:focus-visible]:bg-brand group-has-[:focus-visible]:text-white',
+    brand: 'bg-brand text-white [@media(hover:hover)]:group-hover:bg-brand-dark',
+  }
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-full transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-105 ${sizes[size]} ${tones[tone]}`}>
+    <span className={`inline-flex shrink-0 items-center justify-center rounded-full transition-[background-color,color,transform] duration-500 [@media(hover:hover)]:group-hover:scale-105 ${sizes[size]} ${tones[tone]}`}>
       <Icon />
     </span>
   )

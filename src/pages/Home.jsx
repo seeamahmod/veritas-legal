@@ -231,7 +231,7 @@ function Practice() {
             <RevealItem key={title} className="h-full">
               <Link
                 to={to}
-                className="group flex h-full min-h-[320px] flex-col justify-between gap-10 rounded-[24px] bg-surface p-6 transition-[background-color,transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_30px_60px_-30px_rgba(42,42,42,0.3)] lg:min-h-[350px]"
+                className="group flex h-full min-h-[320px] flex-col justify-between gap-10 rounded-[24px] bg-surface p-6 card-hover lg:min-h-[350px]"
               >
                 <div className="flex flex-col gap-8">
                   <IconBadge icon={Icon} />
@@ -371,7 +371,7 @@ export function Advantages({ bg = 'bg-white', card = 'bg-surface' }) {
           {advantages.map(({ Icon, title, text }) => (
             <RevealItem
               key={title}
-              className={`group flex flex-col gap-6 rounded-[24px] ${card} p-6 transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(42,42,42,0.25)] lg:min-h-[323px]`}
+              className={`group flex flex-col gap-6 rounded-[24px] ${card} p-6 card-hover lg:min-h-[323px]`}
             >
               <IconBadge icon={Icon} />
               <div className="flex flex-col gap-5">

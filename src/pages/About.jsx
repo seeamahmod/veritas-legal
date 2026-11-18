@@ -102,7 +102,7 @@ export default function About() {
               {values.map(({ Icon, title, text }) => (
                 <RevealItem
                   key={title}
-                  className="group flex flex-col gap-6 rounded-[24px] bg-surface p-6 transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(42,42,42,0.25)]"
+                  className="group flex flex-col gap-6 rounded-[24px] bg-surface p-6 card-hover"
                 >
                   <IconBadge icon={Icon} />
                   <h3 className="text-[22px] font-medium leading-[1.2] tracking-[-0.015em]">{title}</h3>
@@ -124,7 +124,7 @@ export default function About() {
                   className={`relative grid grid-cols-[24px_1fr] gap-5 md:grid-cols-2 md:gap-14 ${i % 2 ? 'md:[&>div]:col-start-2' : 'md:[&>div]:text-right'}`}
                 >
                   <span className="relative z-10 mt-1.5 size-6 rounded-full border-4 border-surface bg-brand md:absolute md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
-                  <div className="flex flex-col gap-2 rounded-[20px] bg-white p-6 transition-shadow duration-500 hover:shadow-[0_20px_50px_-30px_rgba(42,42,42,0.3)]">
+                  <div className="flex flex-col gap-2 rounded-[20px] bg-white p-6 card-hover">
                     <span className="text-[14px] font-medium tracking-[0.08em] text-brand">{t.year}</span>
                     <h3 className="text-[22px] font-medium leading-[1.2] tracking-[-0.015em]">{t.title}</h3>
                     <p className="text-[16px] leading-[1.5] text-ink-soft">{t.text}</p>
@@ -175,10 +175,10 @@ export default function About() {
                 <RevealItem
                   as="figure"
                   key={s.tag}
-                  className="group flex flex-col justify-between gap-10 rounded-[24px] bg-white p-6 transition-[transform,background-color,color] duration-500 hover:-translate-y-1.5 hover:bg-brand hover:text-white sm:p-8"
+                  className="group flex flex-col justify-between gap-10 rounded-[24px] bg-white p-6 card-hover sm:p-8"
                 >
                   <div className="flex flex-col gap-6">
-                    <QuoteIcon className="size-9 text-brand transition-colors duration-500 group-hover:text-white" />
+                    <QuoteIcon className="size-9 text-brand" />
                     <blockquote className="text-[19px] leading-[1.5] tracking-[-0.015em] sm:text-[20px]">“{s.quote}”</blockquote>
                   </div>
                   <figcaption className="flex items-center justify-between gap-4 text-[15px]">

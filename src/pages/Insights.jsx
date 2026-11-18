@@ -90,7 +90,7 @@ export default function Insights() {
                   >
                     <Link
                       to={`/insights/${p.slug}`}
-                      className="group flex h-full flex-col gap-5 rounded-[24px] bg-white p-4 transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(42,42,42,0.3)]"
+                      className="group flex h-full flex-col gap-5 rounded-[24px] bg-white p-4 card-hover"
                     >
                       <div className="overflow-hidden rounded-[18px]">
                         <FadeImage src={p.img} alt={p.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.06]" />

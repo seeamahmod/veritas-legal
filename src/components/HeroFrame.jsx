@@ -54,7 +54,7 @@ export default function HeroFrame({ image, imageAlt = '', imagePosition = 'cente
             aria-controls="site-menu"
             className="group flex size-[52px] items-center justify-center rounded-full bg-white/11 text-white backdrop-blur-[8px] transition-[background-color,transform] duration-300 hover:scale-105 hover:bg-white/20 active:scale-95"
           >
-            <MenuIcon className="size-[18px] transition-transform duration-300 group-hover:rotate-90" />
+            <MenuIcon className="size-[18px]" />
           </button>
         </div>
 

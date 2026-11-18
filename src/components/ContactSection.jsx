@@ -106,7 +106,7 @@ export default function ContactSection({ headingTag = 'h2', bg = 'bg-white' }) {
             {details.map(({ label, Icon, lines, href }) => {
               const Inner = (
                 <>
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-500 group-hover:rotate-[-10deg]">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-[background-color,transform] duration-500 [@media(hover:hover)]:group-hover:scale-105">
                     <Icon className="size-5" />
                   </span>
                   <span className="flex flex-col gap-2">
@@ -120,7 +120,7 @@ export default function ContactSection({ headingTag = 'h2', bg = 'bg-white' }) {
                 </>
               )
               const cls =
-                'group flex h-full items-center gap-3 rounded-[16px] bg-surface p-4 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_-18px_rgba(0,0,0,0.35)]'
+                'group flex h-full items-center gap-3 rounded-[16px] bg-surface p-4 card-hover'
               return (
                 <RevealItem key={label}>
                   {href ? (

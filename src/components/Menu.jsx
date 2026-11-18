@@ -52,11 +52,19 @@ export default function Menu({ open, onClose }) {
           aria-modal="true"
           aria-label="Site navigation"
           id="site-menu"
-          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0f1530]/95 text-white backdrop-blur-xl"
-          initial={{ clipPath: 'circle(0% at calc(100% - 50px) 50px)' }}
-          animate={{ clipPath: 'circle(150% at calc(100% - 50px) 50px)' }}
-          exit={{ clipPath: 'circle(0% at calc(100% - 50px) 50px)' }}
-          transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
+          // Solid colour (no full-screen backdrop blur) keeps the reveal at a steady 60fps.
+          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-[#0f1530] text-white will-change-[clip-path,opacity]"
+          initial={{ clipPath: 'circle(3% at calc(100% - 60px) 60px)', opacity: 0 }}
+          animate={{
+            clipPath: 'circle(150% at calc(100% - 60px) 60px)',
+            opacity: 1,
+            transition: { clipPath: { duration: 1, ease: [0.76, 0, 0.24, 1] }, opacity: { duration: 0.4, ease: 'easeOut' } },
+          }}
+          exit={{
+            clipPath: 'circle(3% at calc(100% - 60px) 60px)',
+            opacity: 0,
+            transition: { clipPath: { duration: 0.6, ease: [0.65, 0, 0.35, 1] }, opacity: { duration: 0.3, delay: 0.3 } },
+          }}
         >
           <div className="container-x flex items-center justify-between pt-[24px] sm:pt-[47px]">
             <NavLink to="/" onClick={onClose} aria-label="Veritas Legal home">
@@ -77,9 +85,14 @@ export default function Menu({ open, onClose }) {
               {navLinks.map((link, i) => (
                 <motion.li
                   key={link.to}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 + i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    filter: 'blur(0px)',
+                    transition: { delay: 0.4 + i * 0.06, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+                  }}
+                  exit={{ opacity: 0, y: 8, transition: { duration: 0.2 } }}
                 >
                   <NavLink
                     to={link.to}
@@ -100,9 +113,9 @@ export default function Menu({ open, onClose }) {
 
             <motion.div
               className="flex flex-col gap-6 lg:max-w-[340px]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.75, duration: 0.8, ease: [0.22, 1, 0.36, 1] } }}
+              exit={{ opacity: 0, transition: { duration: 0.2 } }}
             >
               <p className="text-[18px] leading-[1.5] text-white/70">
                 Strategic counsel across corporate, immigration and litigation matters, from people who pick up the phone.
