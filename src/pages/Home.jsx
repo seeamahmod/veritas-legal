@@ -295,11 +295,11 @@ function Process() {
         />
         <div className="flex flex-col gap-6">
           <Reveal className="group flex flex-col gap-6 overflow-hidden rounded-[24px] bg-white p-4 sm:p-6 md:flex-row md:items-center md:gap-8">
-            <ZoomImage src={stepConsult} alt="Initial consultation meeting around a conference table" className="aspect-[449/256] md:w-[45%] md:max-w-[449px] md:shrink-0" />
+            <ZoomImage src={stepConsult} alt="Initial consultation meeting around a conference table" className="aspect-[500/286] md:w-[44%] md:max-w-[500px] md:shrink-0" />
             <div className="flex flex-col gap-4">
               <StepNumber n={1} />
               <h3 className="text-[26px] font-medium capitalize leading-[1.2] tracking-[-0.045em] sm:text-[32px]">Initial Consultation</h3>
-              <p className="text-[17px] leading-[1.5] tracking-[-0.015em] text-ink-soft sm:text-[20px] lg:text-[24px]">
+              <p className="text-[17px] leading-[1.5] tracking-[-0.015em] text-ink-soft sm:text-[18px]">
                 Share your legal concerns with us by completing the form. Our team will carefully review your submission and promptly contact you to
                 schedule a personalized consultation, setting you on the path to a resolution. Let&apos;s build your defense together!
               </p>
@@ -328,7 +328,7 @@ function Process() {
             <div className="flex flex-1 flex-col gap-4">
               <StepNumber n={5} />
               <h3 className="text-[26px] font-medium capitalize leading-[1.2] tracking-[-0.045em] sm:text-[32px]">Get Started Today</h3>
-              <p className="text-[17px] leading-[1.5] tracking-[-0.015em] text-ink-soft sm:text-[20px] lg:text-[24px]">
+              <p className="text-[17px] leading-[1.5] tracking-[-0.015em] text-ink-soft sm:text-[18px]">
                 Connect with our legal experts by filling out the form. We will review your details and reach out to arrange a consultation, guiding you
                 towards effective solutions. Let&apos;s start building your case now!
               </p>
@@ -336,7 +336,7 @@ function Process() {
                 Start your case
               </ButtonLink>
             </div>
-            <ZoomImage src={stepStarted} alt="Legal team reviewing a client file together" className="aspect-[449/256] md:w-[45%] md:max-w-[449px] md:shrink-0" />
+            <ZoomImage src={stepStarted} alt="Legal team reviewing a client file together" className="aspect-[500/286] md:w-[44%] md:max-w-[500px] md:shrink-0" />
           </Reveal>
         </div>
       </div>
