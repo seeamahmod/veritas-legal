@@ -59,11 +59,11 @@ export default function Footer() {
             ))}
             <Reveal delay={0.24} className="col-span-2 flex flex-col gap-6 sm:col-span-1">
               <h3 className="text-[22px] font-medium leading-none tracking-[-0.015em] sm:text-[24px]">Contact</h3>
-              <ul className="flex flex-col gap-5 text-[16px] leading-none tracking-[-0.015em] text-ink-soft">
+              <ul className="flex flex-col gap-6 text-[16px] leading-none tracking-[-0.015em] text-ink-soft">
                 <li>
                   <Link to="/contact" className="flex items-center gap-[10px] hover:text-brand">
                     <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
-                      <MapPinIcon className="size-[15px]" strokeWidth={2} />
+                      <MapPinIcon className="size-[13.333px]" strokeWidth={2.7} />
                     </span>
                     Los Angeles Office
                   </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <li>
                   <a href={`tel:${contact.footerPhoneHref}`} className="flex items-center gap-[10px] hover:text-brand">
                     <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
-                      <PhoneIcon className="size-[15px]" strokeWidth={2} />
+                      <PhoneIcon className="size-[13.333px]" strokeWidth={2.7} />
                     </span>
                     {contact.footerPhone}
                   </a>
@@ -79,7 +79,7 @@ export default function Footer() {
                 <li>
                   <a href={`mailto:${contact.email}`} className="flex items-center gap-[10px] break-all hover:text-brand">
                     <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand text-white">
-                      <EnvelopeIcon className="size-[15px]" strokeWidth={2} />
+                      <EnvelopeIcon className="size-[13.333px]" strokeWidth={2.7} />
                     </span>
                     {contact.email}
                   </a>
