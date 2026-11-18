@@ -58,12 +58,12 @@ export default function Menu({ open, onClose }) {
           animate={{
             clipPath: 'circle(150% at calc(100% - 60px) 60px)',
             opacity: 1,
-            transition: { clipPath: { duration: 1, ease: [0.76, 0, 0.24, 1] }, opacity: { duration: 0.4, ease: 'easeOut' } },
+            transition: { clipPath: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }, opacity: { duration: 0.32, ease: 'easeOut' } },
           }}
           exit={{
             clipPath: 'circle(3% at calc(100% - 60px) 60px)',
             opacity: 0,
-            transition: { clipPath: { duration: 0.6, ease: [0.65, 0, 0.35, 1] }, opacity: { duration: 0.3, delay: 0.3 } },
+            transition: { clipPath: { duration: 0.5, ease: [0.65, 0, 0.35, 1] }, opacity: { duration: 0.25, delay: 0.25 } },
           }}
         >
           <div className="container-x flex items-center justify-between pt-[24px] sm:pt-[47px]">
@@ -90,7 +90,7 @@ export default function Menu({ open, onClose }) {
                     opacity: 1,
                     y: 0,
                     filter: 'blur(0px)',
-                    transition: { delay: 0.4 + i * 0.06, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+                    transition: { delay: 0.3 + i * 0.05, duration: 0.65, ease: [0.22, 1, 0.36, 1] },
                   }}
                   exit={{ opacity: 0, y: 8, transition: { duration: 0.2 } }}
                 >
@@ -114,7 +114,7 @@ export default function Menu({ open, onClose }) {
             <motion.div
               className="flex flex-col gap-6 lg:max-w-[340px]"
               initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.75, duration: 0.8, ease: [0.22, 1, 0.36, 1] } }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
             >
               <p className="text-[18px] leading-[1.5] text-white/70">
