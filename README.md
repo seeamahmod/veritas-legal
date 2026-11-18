@@ -2,7 +2,7 @@
 
 A fast, secure and fully responsive law-firm website built from the **Veritas Law Firm** Figma design, with React, Vite and Tailwind CSS. It includes the designed home page plus seven inner pages, subtle motion throughout, and production-grade security headers.
 
-**Live site:** _see the website link in this repository's About section_
+**Live site:** [veritas-legal-iota.vercel.app](https://veritas-legal-iota.vercel.app)
 
 ![React](https://img.shields.io/badge/React-19-149eca) ![Vite](https://img.shields.io/badge/Vite-8-646cff) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8) ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 

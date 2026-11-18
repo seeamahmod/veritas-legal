@@ -10,7 +10,8 @@ const config = {
   framework: 'vite',
   cleanUrls: true,
   trailingSlash: false,
-  rewrites: [{ source: '/((?!api/|assets/|.*\\..*).*)', destination: '/index.html' }],
+  // Vercel serves real files and /api functions first; everything else falls through to the SPA.
+  rewrites: [{ source: '/(.*)', destination: '/index.html' }],
   headers: [
     { source: '/(.*)', headers: toList(securityHeaders) },
     {
