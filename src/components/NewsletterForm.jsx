@@ -47,7 +47,7 @@ export default function NewsletterForm() {
           placeholder="Please enter your email address"
           aria-invalid={status.type === 'error'}
           aria-describedby={statusId}
-          className="h-14 min-w-0 flex-1 rounded-full border border-ink/10 bg-surface px-4 text-[16px] tracking-[-0.015em] text-ink outline-none transition-colors placeholder:text-ink focus:border-brand focus:bg-white"
+          className="h-14 w-full min-w-0 shrink-0 rounded-full border border-ink/10 bg-surface px-5 text-[16px] xs:w-auto xs:flex-1 xs:shrink tracking-[-0.015em] text-ink outline-none transition-colors placeholder:text-ink focus:border-brand focus:bg-white"
         />
         {/* Honeypot: hidden from people and assistive tech, bots fill it in. */}
         <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />

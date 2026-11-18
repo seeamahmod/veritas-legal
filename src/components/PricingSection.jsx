@@ -38,7 +38,7 @@ export default function PricingSection({ bg = 'bg-surface' }) {
           text="Find a plan that matches your legal needs, from individuals to large corporations."
         />
         <Stagger
-          className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-[26px]"
+          className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-[26px]"
           onMouseLeave={() => setHovered(null)}
         >
           {plans.map((p) => {
@@ -49,9 +49,7 @@ export default function PricingSection({ bg = 'bg-surface' }) {
                 key={p.id}
                 onMouseEnter={() => canHover && setHovered(p.id)}
                 onFocus={() => canHover && setHovered(p.id)}
-                className={`flex flex-col gap-6 rounded-[20px] bg-white p-4 transition-[padding] duration-500 ease-out sm:p-5 ${
-                  active ? 'lg:py-[34px]' : ''
-                } ${p.featured ? 'md:col-span-2 lg:col-span-1 md:max-lg:mx-auto md:max-lg:w-[calc(50%-12px)]' : ''}`}
+                className={`flex h-full flex-col gap-6 rounded-[20px] bg-white p-4 sm:p-5 ${p.featured ? 'md:col-span-2 lg:col-span-1 md:max-lg:mx-auto md:max-lg:w-[calc(50%-12px)]' : ''}`}
               >
                 <div
                   className={`flex flex-col gap-6 rounded-[18px] p-5 transition-colors duration-500 sm:p-6 ${
@@ -61,7 +59,7 @@ export default function PricingSection({ bg = 'bg-surface' }) {
                   <div className="flex items-center gap-3">
                     <span
                       className={`flex size-14 shrink-0 items-center justify-center rounded-full transition-[background-color,color,transform] duration-500 ${
-                        active ? 'rotate-[-10deg] bg-white text-brand' : 'bg-brand text-white'
+                        active ? 'bg-white text-brand' : 'bg-brand text-white'
                       }`}
                     >
                       <Icon className="size-[27px]" />
