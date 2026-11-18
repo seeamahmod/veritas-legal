@@ -28,7 +28,11 @@ const config = {
 }
 
 const next = JSON.stringify(config, null, 2) + '\n'
-if (process.argv.includes('--check')) {
+if (process.argv.includes('--check') && process.env.VERCEL) {
+  // Vercel reads (and rewrites) vercel.json before the build runs, so the drift check is a
+  // local/CI guard only.
+  console.log('Skipping header drift check on Vercel.')
+} else if (process.argv.includes('--check')) {
   const current = await readFile('vercel.json', 'utf8').catch(() => '{}')
   // Compare structure, not bytes, so line endings or formatting never break the build.
   let same = false
